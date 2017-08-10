@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crawls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crawls.each do |crawl| %>
+      <tr>
+        <td><%= crawl.id %></td>
+        <td><%= crawl.name %></td>
+        <td><%= crawl.reg_no %></td>
+        <td><%= crawl.dob %></td>
+        <td><%= link_to 'Show', crawl %></td>
+        <td><%= link_to 'Edit', edit_crawl_path(crawl) %></td>
+        <td><%= link_to 'Destroy', crawl, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crawl', new_crawl_path %>
